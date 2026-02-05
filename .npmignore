@@ -1,0 +1,34 @@
+# 源代码（只发布构建后的文件）
+src/
+docs/
+
+# 配置文件
+vite.config.js
+.gitignore
+.npmignore
+
+# 开发文件
+*.log
+node_modules/
+.vscode/
+.idea/
+.DS_Store
+
+# 测试文件
+test/
+tests/
+__tests__/
+*.spec.js
+*.test.js
+
+# 构建工具
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# 其他
+examples/
+demo/
+*.md
+!README.md
+!CHANGELOG.md

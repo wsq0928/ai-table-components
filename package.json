@@ -1,0 +1,62 @@
+{
+  "name": "ai-table-components",
+  "version": "1.0.0",
+  "description": "完整的Vue3+ElementPlus列表管理组件库",
+  "main": "./dist/ai-table-components.umd.js",
+  "module": "./dist/ai-table-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/ai-table-components.es.js",
+      "require": "./dist/ai-table-components.umd.js"
+    },
+    "./dist/style.css": "./dist/ai-table-components.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prepublishOnly": "npm run build",
+    "preview": "vite preview",
+    "check-build": "node scripts/check-build.js",
+    "prepare-publish": "bash scripts/prepare-publish.sh"
+  },
+  "keywords": [
+    "vue3",
+    "element-plus",
+    "table",
+    "list",
+    "form",
+    "components",
+    "ai-table",
+    "data-table",
+    "crud"
+  ],
+  "author": "wsq0928",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.3.0",
+    "element-plus": "^2.0.0",
+    "axios": "^0.27.0 || ^1.0.0"
+  },
+  "dependencies": {
+    "sortablejs": "^1.15.6",
+    "dayjs": "^1.11.19"
+  },
+  "devDependencies": {
+    "vite": "^4.5.0",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "sass": "^1.69.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wsq0928/ai-table-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wsq0928/ai-table-components/issues"
+  },
+  "homepage": "https://github.com/wsq0928/ai-table-components"
+}
