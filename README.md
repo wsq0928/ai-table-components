@@ -363,8 +363,8 @@ npm update ai-table-components
 如有问题或建议，请通过以下方式联系：
 
 - 提交 [Issue](issues)
-- 发送邮件到：your-email@example.com
+- 发送邮件到：664477700@qq.com
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by [王胜强]

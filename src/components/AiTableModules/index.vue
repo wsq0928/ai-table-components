@@ -7,7 +7,6 @@
           <el-button
             v-if="handleAdd"
             type="primary"
-            :icon="Plus"
             @click="onAdd"
           >
             新增
@@ -15,7 +14,6 @@
           <el-button
             v-if="handleDelete"
             type="danger"
-            :icon="Delete"
             :disabled="selectedRows.length === 0"
             @click="onBatchDelete"
           >
