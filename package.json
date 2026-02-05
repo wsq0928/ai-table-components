@@ -1,6 +1,6 @@
 {
   "name": "ai-table-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "完整的Vue3+ElementPlus列表管理组件库",
   "main": "./dist/ai-table-components.umd.js",
   "module": "./dist/ai-table-components.es.js",
