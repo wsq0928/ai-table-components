@@ -158,7 +158,7 @@
               </el-tag>
 
               <el-tooltip
-                v-else-if="header.tooltip"
+                v-else-if="header.tooltip !== false"
                 popper-class="custom-tooltip"
                 placement="top"
                 :content="formatCellValue(row, header)"
