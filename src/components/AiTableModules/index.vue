@@ -195,14 +195,27 @@
             align="center"
           >
             <template #default="{ row }">
-              <ActionButtons
-                :actions="rowActions"
+              <!-- 自定义操作列插槽 -->
+              <slot
+                name="actions"
                 :row="row"
-                @action="onRowAction"
-              />
+                :data="row"
+              >
+                <ActionButtons
+                  :actions="rowActions"
+                  :row="row"
+                  @action="onRowAction"
+                />
+              </slot>
             </template>
           </el-table-column>
+
+          <!-- 自定义列插槽（放在最后，用户可以添加额外列） -->
+          <slot name="append-column" />
         </el-table>
+
+        <!-- 表格底部插槽 -->
+        <slot name="table-footer" />
       </div>
     </div>
 
@@ -211,6 +224,11 @@
       v-if="pager"
       class="pagination-area"
     >
+      <!-- 分页左侧插槽 -->
+      <div class="pagination-left">
+        <slot name="pagination-left" />
+      </div>
+
       <el-pagination
         v-model:current-page="pager.current"
         v-model:page-size="pager.pageSize"
@@ -220,6 +238,16 @@
         @current-change="onPageChange"
         @size-change="onSizeChange"
       />
+
+      <!-- 分页右侧插槽 -->
+      <div class="pagination-right">
+        <slot name="pagination-right" />
+      </div>
+    </div>
+
+    <!-- 底部自定义插槽 -->
+    <div v-if="$slots.footer" class="module-footer">
+      <slot name="footer" />
     </div>
   </div>
 </template>
@@ -802,8 +830,10 @@ defineExpose({
 
 .pagination-area {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
+  padding: 12px 20px;
   background-color: #fff;
   flex-shrink: 0;
   position: sticky;
@@ -837,6 +867,23 @@ defineExpose({
 
 :deep(.sortable-chosen) {
   background-color: #f5f7fa !important;
+}
+
+.pagination-left,
+.pagination-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination-left {
+  flex: 1;
+}
+
+.module-footer {
+  padding: 12px 20px;
+  background-color: #fff;
+  border-top: 1px solid #e4e7ed;
 }
 </style>
 <style>
